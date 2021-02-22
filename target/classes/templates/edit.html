@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/gun/index">Back</a>
+    <form action="/gun/editdb" th:object="${z}" method="POST">
+
+        
+        
+        <label for="gunname">Input gunname : </label>
+        <input type="text" id="gunname" name="gunname" th:field="*{gunname}"><br><br>
+
+        <label for="gundamage">Input gundamage : </label>
+        <input type="text" id="gundamage" name="gundamage" th:field="*{gundamage}"><br><br>
+
+        <label for="gunmagazine">Input gunmagazine : </label>
+        <input type="text" id="gunmagazine" name="gunmagazine" th:field="*{gunmagazine}"><br><br>
+
+        <label for="gunmobility">Input gunmobility : </label>
+        <input type="text" id="gunmobility" name="gunmobility" th:field="*{gunmobility}"><br><br>
+
+        <label for="guncolor">Input guncolor : </label>
+        <input type="text" id="guncolor" name="guncolor" th:field="*{guncolor}"><br><br>
+
+        <input type="submit" value="Submit">
+        
+    </form>
+</body>
+</html>

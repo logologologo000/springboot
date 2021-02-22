@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<a href="/gun/create">Add Gun</a>
+<body>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Damage</td>
+            <td>Magazine</td>
+            <td>Mobility</td>
+            <td>Color</td>
+            <td>Manage</td>
+        </tr>
+        <tr th:each="x:${z}">
+            <td>
+                <P th:text="${x.id}"></p>
+            </td>
+            <td>
+                <p th:text="${x.gunname}"></p>
+            </td>
+            <td>
+                <p th:text="${x.gundamage}"></p>
+            </td>
+            <td>
+                <P th:text="${x.gunmagazine}"></p>
+            </td>
+            <td>
+                <p th:text="${x.gunmobility}"></p>
+            </td>
+            <td>
+                <p th:text="${x.guncolor}"></p>
+            </td>
+            <td>
+                <a th:href="  '/gun/edit?id=' + ${ x.id } ">edit</a>
+                <a th:href="  '/gun/delete?id=' + ${x.id} ">delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
