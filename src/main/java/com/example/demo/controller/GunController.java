@@ -67,6 +67,7 @@ public class GunController {
             c.setGunmagazine(gunmagazine);
             c.setGunmobility(gunmobility);
             c.setGuncolor(guncolor);
+            c.setId(id);
             y.save(c);
             
         }

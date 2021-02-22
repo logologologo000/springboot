@@ -8,9 +8,9 @@
 </head>
 <body>
     <a href="/gun/index">Back</a>
-    <form action="/gun/editdb" th:object="${z}" method="POST">
+    <form action="/gun/editsave" th:object="${z}" method="POST">
 
-        
+        <input type="hidden" th:field="*{id}">
         
         <label for="gunname">Input gunname : </label>
         <input type="text" id="gunname" name="gunname" th:field="*{gunname}"><br><br>
