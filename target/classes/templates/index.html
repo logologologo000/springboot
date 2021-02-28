@@ -5,45 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APEX</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css.css">
+    <style type="text/css">
+
+    </style>
 </head>
-<a href="/gun/create">Add Gun</a>
+
+
+
 <body>
-    <table>
-        <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Damage</td>
-            <td>Magazine</td>
-            <td>Mobility</td>
-            <td>Color</td>
-            <td>Manage</td>
-        </tr>
-        <tr th:each="x:${z}">
-            <td>
-                <P th:text="${x.id}"></p>
-            </td>
-            <td>
-                <p th:text="${x.gunname}"></p>
-            </td>
-            <td>
-                <p th:text="${x.gundamage}"></p>
-            </td>
-            <td>
-                <P th:text="${x.gunmagazine}"></p>
-            </td>
-            <td>
-                <p th:text="${x.gunmobility}"></p>
-            </td>
-            <td>
-                <p th:text="${x.guncolor}"></p>
-            </td>
-            <td>
-                <a th:href="  '/gun/edit?id=' + ${ x.id } ">edit</a>
-                <a th:href="  '/gun/delete?id=' + ${x.id} ">delete</a>
-            </td>
-        </tr>
-    </table>
+    <div class="container" style="margin-top: 50px;">
+        <nav class="navbar navbar-dark bg-dark" >
+            <h1 style="color:white">APEX Legend GUN</h1>
+            <div class="btn btn-outline-success">
+                <a href="/gun/create">Add Gun</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="text-align: center;">
+
+        <table class="table table-hover table-dark" style="opacity: 0.8;
+            filter: alpha(opacity=40);">
+
+            <thead>
+                <tr>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Damage</th>
+                    <th scope="col">Magazine</th>
+                    <th scope="col">Mobility</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Manage</th>
+                </tr>
+            </thead>
+
+            <tr th:each="x:${z}">
+
+                <td>
+                    <p th:text="${x.gunname}"></p>
+                </td>
+                <td>
+                    <p th:text="${x.gundamage}"></p>
+                </td>
+                <td>
+                    <P th:text="${x.gunmagazine}"></p>
+                </td>
+                <td>
+                    <p th:text="${x.gunmobility}"></p>
+                </td>
+                <td>
+                    <p th:text="${x.guncolor}"></p>
+                </td>
+                <td>
+                    <div type="button" class="btn btn-outline-warning">
+                        <a th:href="  '/gun/edit?id=' + ${ x.id } ">EDIT</a>
+                    </div>
+                    <div type="button" class="btn btn-outline-danger">
+                        <a th:href="  '/gun/delete?id=' + ${x.id} ">delete</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 
 </html>

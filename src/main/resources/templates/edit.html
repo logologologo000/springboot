@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css.css">
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
-    <a href="/gun/index">Back</a>
+    
+    
+    <div class="container" style="text-align: center; margin-top: 50px; background-color: rgba(255, 255, 255, 0.315) ;opacity: 0.8;
+    filter: alpha(opacity=40); padding: 30px;border-radius: 5px;">
     <form action="/gun/editsave" th:object="${z}" method="POST">
 
         <input type="hidden" th:field="*{id}">
         
-        <label for="gunname">Input gunname : </label>
-        <input type="text" id="gunname" name="gunname" th:field="*{gunname}"><br><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label" for="gunname">Name : </label>
+            <input style="width:500px" class="form-control" type="text" id="gunname" name="gunname" th:field="*{gunname}" required>
+        </div>
 
-        <label for="gundamage">Input gundamage : </label>
-        <input type="text" id="gundamage" name="gundamage" th:field="*{gundamage}"><br><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label" for="gundamage">Damage : </label>
+            <input style="width:500px" class="form-control" type="number" min="1" max="100" id="gundamage" name="gundamage" th:field="*{gundamage}" required>
+        </div>
 
-        <label for="gunmagazine">Input gunmagazine : </label>
-        <input type="text" id="gunmagazine" name="gunmagazine" th:field="*{gunmagazine}"><br><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label" for="gunmagazine">Magazine : </label>
+            <input style="width:500px" class="form-control" type="number" min="1" id="gunmagazine" name="gunmagazine" th:field="*{gunmagazine}" required>
+        </div>
 
-        <label for="gunmobility">Input gunmobility : </label>
-        <input type="text" id="gunmobility" name="gunmobility" th:field="*{gunmobility}"><br><br>
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label" for="gunmobility">Mobility : </label>
+            <input style="width:500px" class="form-control" type="number" min="1" max="100" id="gunmobility" name="gunmobility" th:field="*{gunmobility}" required>
+        </div>
 
-        <label for="guncolor">Input guncolor : </label>
-        <input type="text" id="guncolor" name="guncolor" th:field="*{guncolor}"><br><br>
-
-        <input type="submit" value="Submit">
+        <div class="form-group row">
+            <label style="font-weight: bold;" class="col-sm-2 col-form-label" for="guncolor">Color : </label>
+            <input style="width:500px" class="form-control" type="text" id="guncolor" name="guncolor" th:field="*{guncolor}" required>
+        </div>
+        <button type="button" class="btn btn-warning"><a href="/gun/index">Back</a></button>
+        <input class="btn btn-primary" type="submit" value="Submit">
         
     </form>
+</div>
 </body>
 </html>
